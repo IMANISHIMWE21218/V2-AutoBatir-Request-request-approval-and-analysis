@@ -1,0 +1,27 @@
+{% extends 'main.html' %}
+{% load static %}
+
+
+{% block content %}
+
+<div class="home">
+    <div class="navbar">
+        <img src={% static 'img/auto batir logo 7.png' %} class="logo">
+        <button type="button"><a href="{% url 'signin' %}">Login</a> </button>
+    </div>
+    <div class="home_content">
+        <small>welcome to Auto-batir</small>
+        <h1>world's best permit request online system</h1>
+        <button type="button"><a href="{% url 'signup' %}">Sign Up</a></button>
+        
+    </div>
+</div>
+
+
+
+{% endblock content%}
+
+
+
+
+

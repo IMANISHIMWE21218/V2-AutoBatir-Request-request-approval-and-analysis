@@ -1,0 +1,229 @@
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+
+/* navbar */
+
+.nav{
+  display: flexbox;
+  width: 100%;
+  position: absolute;
+  padding: 7px;
+  position: sticky;
+}
+   
+
+/* client homepage */
+
+  .mainBg{
+    padding-top: 1px;
+    width: 100%;
+    background: linear-gradient(to top, rgba(216, 229, 232, 0.6)100%, rgba(0, 0, 0, 0.1)100%);
+    background-position: center;
+    background-size: cover;
+    height: auto;
+    position: relative;
+  }
+  
+  .content{
+    width: 1300px;
+    height: auto;
+    height: 480px;
+    color: #000;
+    position: relative;
+    padding-bottom: 60px;
+    padding-left: 25px;
+  }
+  
+  .content .par{
+    margin-top: 35px;
+    padding-left: 20px;
+    padding-bottom: 12px;
+    font-family: arial;
+    font-size: 16px;
+    letter-spacing: 1.0px;
+    line-height: 28px;
+    width: 855px;
+  }
+  
+  .content h1{
+    font-family: Helvetica, sans-serif;
+    font-size: 20px;
+    padding-left: 20px;
+    margin-top: 5%;
+    letter-spacing: 2px;
+    padding-bottom: 28px;
+  }
+  
+  .content .request{
+    width: 160px;
+    height: 40px;
+    background: #152F4F ;
+    border: none;
+    margin-bottom: 35px;
+    margin-left: 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: .4s ease;
+  }
+  
+  .content .request a{
+    text-decoration: none;
+    color: #fff;
+    transition: .3s ease;
+  
+  }
+  .request:hover{
+    background-color: #0275d8 ;
+  }
+  
+  .content span{
+    
+    color: #152F4F;
+    font-size: 54px;
+    width: 300px;
+  }
+  
+  .notifications{
+    width: 350px;
+    height: 450px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8)50%, rgba(0, 0, 0, 0.8)50%) ;
+    position: absolute;
+    top: -10px;
+    left: 1100px;
+    border-radius: 2px;
+   
+  } 
+  .listingdata{
+    margin: 12px;
+    
+  }
+  .listingdata h4{
+    display: flex;
+    justify-content: center;
+    color: #b6c9cf;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 18px;
+   
+  }
+
+  .listingdata hr{
+    border-bottom: 1px solid #b6c9cf;
+    background-color: #b6c9cf;
+    border-radius: 4px;
+    
+  }
+
+  .list-data  p{
+        color: #fff;
+        font-size: 20px;
+  }
+  .list-data{
+    display: flex;
+    justify-content: center;
+    
+  }
+
+
+  /* landing page */
+
+  .mainBg-landing{
+    padding-top: 1px;
+    width: 100%;
+    background: linear-gradient(to top, rgba(216, 229, 232, 0.6)100%, rgba(0, 0, 0, 0.1)100%);
+    background-position: center;
+    background-size: cover;
+    height: auto;
+    position: relative;
+    
+    
+  }
+  
+  .content-landing{
+    width: 1400px;
+    height: 480px;
+    margin: auto;
+    color: #000;
+    position: relative;
+    
+  }
+  
+  .content-landing .par-landing{
+       margin-top: 30px;
+       padding-left: 20px;
+       padding-bottom: 12px;
+       font-family: arial;
+       letter-spacing: 1.0px;
+       line-height: 28px;
+       width: 855px;
+  }
+  
+  .content-landing h1{
+    font-family: Helvetica, sans-serif;
+    font-size: 40px;
+    padding-left: 20px;
+    margin-top: 5%;
+    letter-spacing: 2px;
+  }
+  
+  .content-landing .request{
+    width: 160px;
+    height: 40px;
+    background: #152F4F ;
+    border: none;
+    margin-bottom: 35px;
+    margin-left: 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: .4s ease;
+  }
+  
+  .content-landing .request a{
+    text-decoration: none;
+    color: #fff;
+    transition: .3s ease;
+  
+  }
+  .request:hover{
+    background-color: #0275d8 ;
+  }
+  
+  .content-landing span{
+    color: #152F4F;
+    font-size: 55px;
+    width: 300px;
+  }
+  
+  .img-landing{
+    width: 420px;
+    height: 490px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8)50%, rgba(0, 0, 0, 0.8)50%) ;
+    position: absolute;
+    top: 20px;
+    left: 1000px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.19), 0 1px 2px rgba(0,0,0,0.29);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  
+  } 
+  .img-landing img{
+    height: 490px;
+
+  }
+ 
+ .nav button a{
+  color: #fff;
+  text-decoration: none;
+  } 
+  button:hover{
+      box-shadow: 0 3px 7px #05424D inset,0 3px 7px #317674;
+  }
+
+
+  /* footer css  */
+
+      
+
+  

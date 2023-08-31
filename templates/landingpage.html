@@ -1,0 +1,73 @@
+
+{% extends 'main.html' %}
+{% load static %}
+
+{% block content %}
+
+<!-- Header Section -->
+<style>
+  .navbar-brand{
+    font-weight: 500;
+  }
+</style>
+  <header class="header">
+        <nav class="nav navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">AutoBatir</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  {% if user.is_authenticated and user.is_engineer %}
+                  <a class="nav-link" href="{% url 'dashboard' %}">Home <span class="sr-only">(current)</span></a>    
+     
+                  {% elif user.is_authenticated and user.is_client %} 
+                  <a class="nav-link" href="{% url 'homepage' %}">Home <span class="sr-only">(current)</span></a>
+                  {% else %}
+                  <a class="nav-link" href="{% url 'landingpage' %}">Home <span class="sr-only">(current)</span></a>
+                  {% endif %} 
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Link</a>
+                </li>
+            
+                <li class="nav-item">
+                  <a class="nav-link disabled" href="#">Disabled</a>
+                </li>
+              </ul>
+
+              {% if user.is_authenticated and user.is_engineer or user.is_client %}
+              
+              <button class="btn btn-dark my-2 my-sm-0" type="submit"><a href="{% url 'logout' %}">Sign-out</a></button>     
+              {% else %}
+              
+              <button class="btn btn-dark my-2 my-sm-0" type="submit"><a href="{% url 'signin' %}">Sign-In</a></button>
+              <button class="btn btn-dark my-2 my-sm-0" type="submit" style="margin-left: 7px;"><a href="{% url 'signup' %}">Sign-Up</a></button>
+              {% endif %}
+              
+            </div>
+          </nav>
+</header>
+
+<body>
+	<div class="mainBg-landing">
+		
+		<div class="content-landing">
+      
+			<h1>Mr/Mrs {% if user.is_authenticated %} {{ user.username }} !!!{% endif %} <br><span>welcome to Autobatir Permit <br>Request & analysis.</span></h1>
+			<p class="par-landing">With the current ways of processing and handling construction documents, more time and resource are wasted, where it uses to take about 13 procedures to acquire all requirement and process or paper work involved to request for a construction document. Auto-batir request approval and analysis system, intends to reduce all difficulties include in all those procedures.  </p>
+			
+			<button class="request"><a href="{% url 'about' %}">About-Us</a></button>	
+		</div>
+        <div class="img-landing">
+            <img src="{% static 'img/building-permit2.png' %}" class="img-fluid hover-shadow" alt="...">
+        </div>
+		</div>
+</body>
+	
+{% include 'footer.html' %}
+{% endblock content %}
+
+
+

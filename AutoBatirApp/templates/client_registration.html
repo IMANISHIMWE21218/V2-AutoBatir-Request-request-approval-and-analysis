@@ -1,0 +1,33 @@
+{% extends 'main.html' %}
+{% load static %}
+
+
+{% block content %}
+<head>
+    <title>Login</title>
+</head>
+
+<h1>signup!</h1>
+<section>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 mx-auto">
+          <div class="card">
+            <div class="card-body">
+                
+                  <form action="{% url 'client_registration' %}" method="POST">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <input type="submit" value="Register" class="btn btn-block btn-primary">
+                  </form>
+             </div>
+            </div>   
+            </div>
+          </div>
+        </div>
+    </div>
+  </section>
+
+
+
+{% endblock content%}

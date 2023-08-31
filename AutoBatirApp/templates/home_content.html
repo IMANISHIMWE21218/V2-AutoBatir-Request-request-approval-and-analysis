@@ -1,0 +1,86 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block content %}
+
+	
+
+<body>
+	<div class="mainBg">
+		
+		<div class="content">
+			<h1>Mr/Mrs {{user}} <br><span>welcome to Autobatir Permit <br>Request & analysis.</span></h1>
+			<p class="par">Before any type of construction work starts, those who are looking to erect a building or conduct repairs are required by law to acquire a building permit. Those who are looking to build on a piece of land would have to request for a building permit before doing so.</p>
+			
+			<button class="request"><a href="{% url 'request_permitForm' %}">Permit</a></button>
+		
+		
+			<div class="notifications">
+				<div class="listingdata">
+					<h4>Listed permits</h4>
+					<hr>
+					<div class="list-data">
+						<table>
+						<tr>
+							<style>
+								p{
+									font-weight: 500;
+								}
+								p a{
+									font-weight: 500;
+									text-decoration: none;
+									color: #fff;
+									font-size: 14px;
+									cursor: pointer;
+								}
+								p a:hover{
+                                    text-decoration: none;
+									color: rgb(158, 237, 237);
+								}
+							</style>
+							
+								{% for permit in permited %}
+
+								{% if permit.Status == 'approved' %}
+
+								
+									   <p class="fw-bold"> <a href="{% url 'pdf-report' %}" target="_blank">{{permit.UPI}}</a></p>
+								
+							    {% elif permit.Status == 'declined' %}
+
+									   <p class="fw-bold">Request Declined</p>
+							
+							    {% elif permit.Status == 'pending' %}
+						    
+							    
+									   <p class="fw-bold">Pending</p>
+								
+										   
+							    {% else %}
+
+							           <h2 style="color: #fff;">---------</h2>
+								
+							    {% endif %}
+						        {% empty %}
+								<h2 style="color: #fff;">----------</h2>
+
+						   
+								{% endfor %} 
+
+							</td>
+						</tr>
+					   </table>
+					</div>
+			
+				</div>
+			</div>
+			
+		</div>
+		</div>
+</body>
+	
+
+{% endblock content %}
+
+
+

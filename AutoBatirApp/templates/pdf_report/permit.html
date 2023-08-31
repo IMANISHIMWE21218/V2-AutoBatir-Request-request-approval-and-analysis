@@ -1,0 +1,87 @@
+{% load static%}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>permit</title>
+</head>
+<body>
+
+<style type="text/css">
+	section{
+		margin: 60px;
+		margin-left: 350px;
+		margin-right: 350px;
+		border: solid 1px black;
+		padding: 20px;
+	}
+	.head h2,h3{
+		text-align: center;
+	}
+	.head .small p{
+		display: inline-flex;
+		justify-content: space-between;
+		font-family: Calibri;
+		font-weight: 300;
+		font-size: 16px;
+		margin-left: 10px;
+		margin-right: 10px;
+	}
+	.body-head h1{
+		text-align: center;
+		padding: 10px;
+		border: solid 1px black;
+	}
+	.body-head p{
+		text-align: center;
+	}
+	.details{
+		display:flex;
+		justify-content: space-between;
+		font-weight: 300;
+		font-size: 16px;
+	}
+	.body-notice h3{
+		text-align: center;
+	}
+</style>
+
+{% for permit in permit %}
+<section>
+		<div class="head">
+			<h2>AUTO-BATIR REQUESTS APPROVAL AND ANALYSIS SYSTEM </h2>
+			<h3>The Kigali Construction And Urban Planning One Stop Centre</h3>
+			<div class="small">
+				<p><b>ADDRESS: Kigali/Rwanda.__________       ,</b></p>
+				<p style="float: right; margin-left: 20px;"><b>Permit ID: {{permit.id}}</b> </p>
+			</div>
+		</div>
+		<div class="body">
+		     <div class="body-head">
+		     	<h1>CONSTRUCTION PERMIT</h1>
+		     <p>The Issued Permit will last only 6 Months</p>
+		     </div>
+		     <div class="details">
+		     	<div class="left">
+		     		<p>Issue Date: {{permit.updated_at_issuedDate}}</p>
+                     <p>Contractor: {{permit.registration}} </p>
+		     	</div>
+		     	<div style="left: 1px;" class="right">
+		     		<p>UPI: {{permit.UPI}} </p>
+		     		
+		     	</div>
+		     </div>
+		     <div class="body-notice">
+		     	<h3>NOTICE</h3>
+		     	<p>The issued Building Permit must be posted on the job site. The Approved Plans and your Inspection Card must be kept at the job site at all times until the project is completed. During construction, you must comply with any and all laws and ordinances pertaining to your construction activity. Remember, no change or deviation from the Approved Plans can be made without prior approval from the Building OfficialS.</p>
+		     	<img style=" width: 70px; height: 40px; " src="{% static 'img/Kigali.jpeg' %}">
+				 
+		     </div>
+		  
+		</div>
+	</section>
+	{% endfor %} 
+
+</body>
+</html>

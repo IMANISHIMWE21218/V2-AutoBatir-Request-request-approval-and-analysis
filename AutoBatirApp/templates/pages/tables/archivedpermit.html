@@ -1,0 +1,387 @@
+{% load static %}
+{% load widget_tweaks %}
+<!--
+
+=========================================================
+* Volt Pro - Premium Bootstrap 5 Dashboard
+=========================================================
+
+* Product Page: https://themesberg.com/product/admin-dashboard/volt-bootstrap-5-dashboard
+* Copyright 2021 Themesberg (https://www.themesberg.com)
+* License (https://themesberg.com/licensing)
+
+* Designed and coded by https://themesberg.com
+
+=========================================================
+
+* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. Please contact us to request a removal.
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head> 
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- Primary Meta Tags -->
+<title>Volt Premium Bootstrap Dashboard - Sign up page</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="title" content="Volt Premium Bootstrap Dashboard - Sign up page">
+<meta name="author" content="Themesberg">
+<meta name="description" content="Volt Pro is a Premium Bootstrap 5 Admin Dashboard featuring over 800 components, 10+ plugins and 20 example pages using Vanilla JS.">
+<meta name="keywords" content="bootstrap 5, bootstrap, bootstrap 5 admin dashboard, bootstrap 5 dashboard, bootstrap 5 charts, bootstrap 5 calendar, bootstrap 5 datepicker, bootstrap 5 tables, bootstrap 5 datatable, vanilla js datatable, themesberg, themesberg dashboard, themesberg admin dashboard" />
+<link rel="canonical" href="https://themesberg.com/product/admin-dashboard/volt-premium-bootstrap-5-dashboard">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://demo.themesberg.com/volt-pro">
+<meta property="og:title" content="Volt Premium Bootstrap Dashboard - Sign up page">
+<meta property="og:description" content="Volt Pro is a Premium Bootstrap 5 Admin Dashboard featuring over 800 components, 10+ plugins and 20 example pages using Vanilla JS.">
+<meta property="og:image" content="https://themesberg.s3.us-east-2.amazonaws.com/public/products/volt-pro-bootstrap-5-dashboard/volt-pro-preview.jpg">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://demo.themesberg.com/volt-pro">
+<meta property="twitter:title" content="Volt Premium Bootstrap Dashboard - Sign up page">
+<meta property="twitter:description" content="Volt Pro is a Premium Bootstrap 5 Admin Dashboard featuring over 800 components, 10+ plugins and 20 example pages using Vanilla JS.">
+<meta property="twitter:image" content="https://themesberg.s3.us-east-2.amazonaws.com/public/products/volt-pro-bootstrap-5-dashboard/volt-pro-preview.jpg">
+
+<!-- Favicon -->
+<link rel="apple-touch-icon" sizes="120x120" href="{% static 'assets/img/favicon/apple-touch-icon.png' %}">
+<link rel="icon" type="image/png" sizes="32x32" href="{% static 'assets/img/favicon/favicon-32x32.png' %} ">
+<link rel="icon" type="image/png" sizes="16x16" href="{% static 'assets/img/favicon/favicon-16x16.png' %}">
+<link rel="manifest" href="{% static 'assets/img/favicon/site.webmanifest' %}">
+<link rel="mask-icon" href="{% static 'assets/img/favicon/safari-pinned-tab.svg' %}" color="#ffffff">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="theme-color" content="#ffffff">
+
+<!-- Sweet Alert -->
+<link type="text/css" href="{% static 'vendor/sweetalert2/dist/sweetalert2.min.css' %}" rel="stylesheet">
+
+<!-- Notyf -->
+<link type="text/css" href="{% static 'vendor/notyf/notyf.min.css' %}" rel="stylesheet">
+
+<!-- Volt CSS -->
+<link type="text/css" href="{% static 'css/volt.css' %}" rel="stylesheet">
+
+<!-- NOTICE: You can use the _analytics.html partial to include production code specific code & trackers -->
+
+</head>
+
+<body>
+
+        <!-- NOTICE: You can use the _analytics.html partial to include production code specific code & trackers -->
+        
+
+        <nav class="navbar navbar-dark navbar-theme-primary px-4 col-12 d-lg-none">
+    <a class="navbar-brand me-lg-5" href="../../index.html">
+        <img class="navbar-brand-dark" src="../../assets/img/brand/light.svg" alt="Volt logo" /> <img class="navbar-brand-light" src="../../assets/img/brand/dark.svg" alt="Volt logo" />
+    </a>
+    <div class="d-flex align-items-center">
+        <button class="navbar-toggler d-lg-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+</nav>
+
+        <nav id="sidebarMenu" class="sidebar d-lg-block bg-gray-800 text-white collapse" data-simplebar>
+  <div class="sidebar-inner px-4 pt-3">
+    <div class="user-card d-flex d-md-none align-items-center justify-content-between justify-content-md-center pb-4">
+      <div class="d-flex align-items-center">
+        <div class="avatar-lg me-4">
+          <img src="../../assets/img/team/profile-picture-3.jpg" class="card-img-top rounded-circle border-white"
+            alt="Bonnie Green">
+        </div>
+        <div class="d-block">
+          <h2 class="h5 mb-3">{{user}}</h2>
+          <a href="{% url 'logout' %}" class="btn btn-secondary btn-sm d-inline-flex align-items-center">
+            <svg class="icon icon-xxs me-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path></svg>            
+            Sign Out
+          </a>
+        </div>
+      </div>
+      <div class="collapse-close d-md-none">
+        <a href="#sidebarMenu" data-bs-toggle="collapse"
+            data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="true"
+            aria-label="Toggle navigation">
+            <svg class="icon icon-xs" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+          </a>
+      </div>
+    </div>
+     </li>
+     
+          </span><ul class="nav flex-column pt-3 pt-md-0">
+            <li class="nav-item">
+              <a href="#" class="nav-link d-flex align-items-center">
+              
+                <span class="mt-1 ms-1 sidebar-text">AutoBatirRequest</span>
+              </a>
+            </li>
+            <li class="nav-item  active ">
+              <a href="{% url 'dashboard' %}" class="nav-link">
+                <span class="sidebar-icon">
+                  <svg class="icon icon-xs me-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"></path><path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"></path></svg>
+                </span> 
+                <span class="sidebar-text">Dashboard</span>
+              </a>
+            </li>
+           
+      
+            <li class="nav-item ">
+              <a href="{% url 'archivedpermit' %}" class="nav-link">
+                <span>
+                  <span class="sidebar-icon">
+                    <svg class="icon icon-xs me-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M4 3a2 2 0 100 4h12a2 2 0 100-4H4z"></path><path fill-rule="evenodd" d="M3 8h14v7a2 2 0 01-2 2H5a2 2 0 01-2-2V8zm5 3a1 1 0 011-1h2a1 1 0 110 2H9a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
+                  </span>
+                  <span class="sidebar-text">Archives</span>
+                </span>
+              </a>
+            </li>
+      
+            <li class="nav-item">
+              <a href="https://masterplan2020.kigalicity.gov.rw/portal/apps/webappviewer/index.html?id=218a2e3088064fc6b13198b4304f3d35/" target="_blank" class="nav-link d-flex justify-content-between">
+                <span>
+                  <span class="sidebar-icon">
+                    <svg class="icon icon-xs me-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path></svg>
+                  </span>
+                  <span class="sidebar-text">City Master Plan</span>
+                </span>
+              </a>
+            </li>
+      
+            <li class="nav-item">
+              <a href="{% url 'about' %}"  class="nav-link d-flex justify-content-between">
+                <span>
+                  <span class="sidebar-icon">
+                    <svg class="icon icon-xs me-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5 4a3 3 0 00-3 3v6a3 3 0 003 3h10a3 3 0 003-3V7a3 3 0 00-3-3H5zm-1 9v-1h5v2H5a1 1 0 01-1-1zm7 1h4a1 1 0 001-1v-1h-5v2zm0-4h5V8h-5v2zM9 8H4v2h5V8z" clip-rule="evenodd"></path></svg>
+                  </span> 
+                  <span class="sidebar-text">About-Us</span>
+                </span>
+              </a>
+            </li>
+          
+            <li role="separator" class="dropdown-divider mt-4 mb-3 border-gray-700"></li>
+            
+            <li class="nav-item">
+              <a href="{% url 'logout' %}" class="btn btn-secondary btn-sm  d-flex align-items-center justify-content-center">
+                <svg class="icon icon-xxs me-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path></svg>            
+                Sign Out
+              </a>
+            </li>
+      <li class="nav-item">
+        <a href="#"
+          class="btn btn-secondary d-flex align-items-center justify-content-center btn-upgrade-pro">
+          <span class="sidebar-icon d-inline-flex align-items-center justify-content-center">
+            <svg class="icon icon-xs me-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M12.395 2.553a1 1 0 00-1.45-.385c-.345.23-.614.558-.822.88-.214.33-.403.713-.57 1.116-.334.804-.614 1.768-.84 2.734a31.365 31.365 0 00-.613 3.58 2.64 2.64 0 01-.945-1.067c-.328-.68-.398-1.534-.398-2.654A1 1 0 005.05 6.05 6.981 6.981 0 003 11a7 7 0 1011.95-4.95c-.592-.591-.98-.985-1.348-1.467-.363-.476-.724-1.063-1.207-2.03zM12.12 15.12A3 3 0 017 13s.879.5 2.5.5c0-1 .5-4 1.25-4.5.5 1 .786 1.293 1.371 1.879A2.99 2.99 0 0113 13a2.99 2.99 0 01-.879 2.121z" clip-rule="evenodd"></path></svg>
+          </span> 
+          <span>Lets Get Started</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+    
+        <main class="content">
+
+            <nav class="navbar navbar-top navbar-expand navbar-dashboard navbar-dark ps-0 pe-2 pb-0">
+  <div class="container-fluid px-0">
+    <div class="d-flex justify-content-between w-100" id="navbarSupportedContent">
+      <div class="d-flex align-items-center">
+        <!-- Search form -->
+        <form class="navbar-search form-inline" id="navbar-search-main">
+          <div class="input-group input-group-merge search-bar">
+              <span class="input-group-text" id="topbar-addon">
+                <svg class="icon icon-xs" x-description="Heroicon name: solid/search" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path>
+                </svg>
+              </span>
+              <input type="text" class="form-control" id="topbarInputIconLeft" name="q" placeholder="Search" aria-label="Search" aria-describedby="topbar-addon">
+          </div>
+        </form>
+        <!-- / Search form -->
+      </div>
+      <!-- Navbar links -->
+
+    </div>
+  </div>
+</nav>
+
+            <div class="py-4">
+                <div class="d-flex justify-content-between w-100 flex-wrap">
+                    <div class="mb-3 mb-lg-0">
+                        <h1 class="h4">Dozens of Data</h1>
+                        <p class="mb-0">All actions that have been commited by an engineer are recorded here. </p>
+                    </div>
+                    <div>
+                        <a href="{% url 'archive_csv_report' %}" class="btn btn-outline-gray-600 d-inline-flex align-items-center">
+                            CSV REPORT
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+          <!-- Archives table -->
+            <div class="card border-0 shadow">
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-centered table-nowrap mb-0 rounded">
+                            <thead class="thead-light">
+                                <tr>
+                                  <th class="border-0 rounded-start">Permit ID</th>
+                                  <th class="border-0">username </th>
+                                  <th class="border-0">UPI</th>
+                                  <th class="border-0">Construction Plan</th>
+                                  <th class="border-0">landownership Doc</th>
+                                  <th class="border-0">date</th>
+                                  <th class="border-0">Payment-proof</th>
+                                  <th class="border-0">otherDoc</th>
+                                  <th class="border-0">Mainzonecode</th>
+                                  <th class="border-0">status</th>
+                                  <th class="border-0">Approved-By</th>
+                                  <th class="border-0">updated Time</th>
+                                  <th class="border-0">Comment</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                   <!-- Item -->
+                      {% for archives in archive %}
+                      <tr>
+                          <td><a href="#" class="text-primary fw-bold"> {{archives.id}}</a> </td>
+                          <td class="fw-bold d-flex align-items-center">
+                              {{archives.registration}}
+                          <td>
+                               {{archives.UPI.UPI_id}}
+                          </td>
+                          <td>
+                             <a href="{{archives.ConstructionPlan.url}}" class="btn btn btn-gray-100 btn-sm" target="_blank">View plan</a>
+                          </td>
+                          <td>
+                            <a href="{{archives.LandOwnerShipDoc.url}}" class="btn btn btn-gray-100 btn-sm" target="_blank">View landDoc</a>
+                          </td>
+
+                          <td>
+                            {% if archives.Paymentproof %}
+                            <a href="{{archives.Paymentproof.url}}" class="btn btn-warning btn-sm" target="_blank">Payment-proof</a>
+                          
+                            {% else %}
+                            <a href="#" class="btn btn-warning btn-sm" target="_blank" disabled>Payment-proof</a>
+                             {% endif %}
+                          </td>
+                          
+                          <td>
+                            {% if archives.OtherDoc %}
+                            <a href="{{permit.OtherDoc.url}}" class="btn btn-warning btn-sm" target="_blank">OtherDoc</a>
+                          
+                            {% else %}
+                            <a href="#" class="btn btn-warning btn-sm" target="_blank" disabled>OtherDoc</a>
+                             {% endif %}
+                          </td>
+
+                          <td>
+                            {{archives.MainZonecode}}
+                         </td>
+                         <td>
+                          {{archives.updated_at_issuedDate}}
+                         </td>
+
+
+                         <td>
+                          {% if archives.Status == 'declined'  %}
+                          <p class="text-danger">{{archives.Status}}</p>
+                          {% elif archives.Status == 'approved' %}
+                      
+                          <p class="text-success">{{archives.Status}}</p>
+                          {% else %}
+    
+                          <button type="button" class="btn btn-danger btn-sm" disabled>non</button>
+                          {% endif %}
+                         </td>
+                         <td>
+                          {{archives.ApprovedBy}}
+                       </td>
+                       <td>
+                        {{archives.updated_at_issuedDate}}
+                     </td>
+                     <td>
+                      {{archives.comment}}
+                   </td>
+                         
+
+                      </tr>
+                       {% endfor %}
+                      <!-- End of Item -->
+
+                
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <footer class="bg-white rounded shadow p-5 mb-4 mt-4">
+              <div class="row">
+                  <div class="col-12 col-md-4 col-xl-6 mb-4 mb-md-0">
+                      <p class="mb-0 text-center text-lg-start">©<span class="current-year"></span> <a class="text-primary fw-normal" href="https://themesberg.com" target="_blank">Copyright: AutoBatirRequest.com</a></p>
+                  </div>
+                  <div class="col-12 col-md-8 col-xl-6 text-center text-lg-start">
+                      <!-- List -->
+                      <ul class="list-inline list-group-flush list-group-borderless text-md-end mb-0">
+                          <li class="list-inline-item px-0 px-sm-2">
+                              <a href="https://themesberg.com/about">About</a>
+                          </li>
+                          </li>
+                          <li class="list-inline-item px-0 px-sm-2">
+                              <a href="https://themesberg.com/contact">Contact</a>
+                          </li>
+                      </ul>
+                  </div>
+              </div>
+          </footer>
+        </main>
+
+    <!-- Core -->
+<script src="../../vendor/@popperjs/core/dist/umd/popper.min.js"></script>
+<script src="../../vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+
+<!-- Vendor JS -->
+<script src="../../vendor/onscreen/dist/on-screen.umd.min.js"></script>
+
+<!-- Slider -->
+<script src="../../vendor/nouislider/distribute/nouislider.min.js"></script>
+
+<!-- Smooth scroll -->
+<script src="../../vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+
+<!-- Charts -->
+<script src="../../vendor/chartist/dist/chartist.min.js"></script>
+<script src="../../vendor/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js"></script>
+
+<!-- Datepicker -->
+<script src="../../vendor/vanillajs-datepicker/dist/js/datepicker.min.js"></script>
+
+<!-- Sweet Alerts 2 -->
+<script src="../../vendor/sweetalert2/dist/sweetalert2.all.min.js"></script>
+
+<!-- Moment JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
+
+<!-- Vanilla JS Datepicker -->
+<script src="../../vendor/vanillajs-datepicker/dist/js/datepicker.min.js"></script>
+
+<!-- Notyf -->
+<script src="../../vendor/notyf/notyf.min.js"></script>
+
+<!-- Simplebar -->
+<script src="../../vendor/simplebar/dist/simplebar.min.js"></script>
+
+<!-- Github buttons -->
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+<!-- Volt JS -->
+<script src="../../assets/js/volt.js"></script>
+
+    
+</body>
+
+</html>
