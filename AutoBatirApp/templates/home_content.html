@@ -3,84 +3,124 @@
 
 {% block content %}
 
-	
-
 <body>
-	<div class="mainBg">
-		
-		<div class="content">
-			<h1>Mr/Mrs {{user}} <br><span>welcome to Autobatir Permit <br>Request & analysis.</span></h1>
-			<p class="par">Before any type of construction work starts, those who are looking to erect a building or conduct repairs are required by law to acquire a building permit. Those who are looking to build on a piece of land would have to request for a building permit before doing so.</p>
-			
-			<button class="request"><a href="{% url 'request_permitForm' %}">Permit</a></button>
-		
-		
-			<div class="notifications">
-				<div class="listingdata">
-					<h4>Listed permits</h4>
-					<hr>
-					<div class="list-data">
-						<table>
-						<tr>
-							<style>
-								p{
-									font-weight: 500;
-								}
-								p a{
-									font-weight: 500;
-									text-decoration: none;
-									color: #fff;
-									font-size: 14px;
-									cursor: pointer;
-								}
-								p a:hover{
-                                    text-decoration: none;
-									color: rgb(158, 237, 237);
-								}
-							</style>
-							
-								{% for permit in permited %}
+    <div class="mainBg">
+        <div class="content">
+            <h1>Mr/Mrs {{user}} <br><span>welcome to Autobatir Permit <br>Request & analysis.</span></h1>
+            <p class="par">Before any type of construction work starts, those who are looking to erect a building or conduct repairs are required by law to acquire a building permit. Those who are looking to build on a piece of land would have to request for a building permit before doing so.</p>
+            <button class="request"><a href="{% url 'request_permitForm' %}">Permit</a></button>
+            <div class="notifications">
+                <div class="listingdata">
+                    <h4>Listed permits</h4>
+                    <hr>
+                    <div class="list-data">
+                        <table>
+                            <tr>
+                                <style>
+                                    p {
+                                        font-weight: 500;
+                                    }
 
-								{% if permit.Status == 'approved' %}
+                                    p a {
+                                        font-weight: 500;
+                                        text-decoration: none;
+                                        color: #fff;
+                                        font-size: 14px;
+                                        cursor: pointer;
+                                    }
 
-								
-									   <p class="fw-bold"> <a href="{% url 'pdf-report' %}" target="_blank">{{permit.UPI}}</a></p>
-								
-							    {% elif permit.Status == 'declined' %}
+                                    p a:hover {
+                                        text-decoration: none;
+                                        color: rgb(158, 237, 237);
+                                    }
 
-									   <p class="fw-bold">Request Declined</p>
-							
-							    {% elif permit.Status == 'pending' %}
-						    
-							    
-									   <p class="fw-bold">Pending</p>
-								
-										   
-							    {% else %}
+                                    /* Style for the "View Comment" button */
+                                    .view-comment-btn {
+                                        font-weight: 500;
+                                        text-decoration: none;
+                                        font-size: 14px;
+                                        cursor: pointer;
+                                        display: inline-block;
+                                        padding: 5px 15px;
+                                        margin: 10px auto; /* Center align the button */
+                                        background-color: #007bff; /* Bootstrap primary button color */
+                                        color: #fff;
+                                        border: none;
+                                        border-radius: 5px;
+                                    }
 
-							           <h2 style="color: #fff;">---------</h2>
-								
-							    {% endif %}
-						        {% empty %}
-								<h2 style="color: #fff;">----------</h2>
-
-						   
-								{% endfor %} 
-
-							</td>
-						</tr>
-					   </table>
-					</div>
-			
-				</div>
-			</div>
-			
-		</div>
-		</div>
+                                    .view-comment-btn:hover {
+                                        background-color: #0056b3; /* Darker color on hover */
+                                    }
+                                </style>
+                                {% for permit in permited %}
+                                    {% if permit.Status == 'approved' %}
+                                        <p class="fw-bold">
+                                            <a href="{% url 'pdf-report' %}" target="_blank">{{permit.UPI}}</a>
+                                            <a class="view-comment-btn" data-toggle="modal" data-target="#commentModal{{ permit.id }}">
+                                                View Comment
+                                            </a>
+                                        </p>
+                                        <!-- Modal for Approved Permit Comment -->
+                                        <div class="modal fade" id="commentModal{{ permit.id }}" tabindex="-1" role="dialog" aria-labelledby="commentModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="commentModalLabel">Comment for Permit {{ permit.UPI }}</h5>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        {{ permit.comment }}
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {% elif permit.Status == 'declined' %}
+                                        <p class="fw-bold">
+                                            Request Declined
+                                            <a class="view-comment-btn" data-toggle="modal" data-target="#commentModal{{ permit.id }}">
+                                                View Comment
+                                            </a>
+                                        </p>
+                                        <!-- Modal for Declined Request Comment -->
+                                        <div class="modal fade" id="commentModal{{ permit.id }}" tabindex="-1" role="dialog" aria-labelledby="commentModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="commentModalLabel">Comment for Request Declined</h5>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        {{ permit.comment }}
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {% elif permit.Status == 'pending' %}
+                                        <p class="fw-bold">Pending</p>
+                                    {% else %}
+                                        <h2 style="color: #fff;">---------</h2>
+                                    {% endif %}
+                                {% empty %}
+                                    <h2 style="color: #fff;">----------</h2>
+                                {% endfor %}
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
-	
 
 {% endblock content %}
-
-
-
